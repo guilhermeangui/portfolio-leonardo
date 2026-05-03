@@ -619,6 +619,8 @@ div.contact-item {
 
 /* Embeds */
 .embed-frame {
+    max-height: 720px;
+    max-width: 420px;
     position: relative;
     width: 100%;
     margin: 1.5rem 0;
