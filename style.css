@@ -920,6 +920,10 @@ div.contact-item {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
+
+    .stats {
+        padding: 4rem 3rem 6rem;
+    }
 }
 
 @media (max-width: 640px) {
