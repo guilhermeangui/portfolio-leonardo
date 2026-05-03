@@ -139,13 +139,23 @@ if (stats) {
     statsObserver.observe(stats);
 }
 
-// Parallax effect for hero
+// Parallax effect for hero (desktop only)
+const parallaxMq = window.matchMedia('(min-width: 1025px)');
 window.addEventListener('scroll', () => {
+    if (!parallaxMq.matches) return;
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
     if (hero && scrolled < window.innerHeight) {
         hero.style.transform = `translateY(${scrolled * 0.2}px)`;
         hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+    }
+});
+
+// Reset hero transform when crossing breakpoint
+parallaxMq.addEventListener('change', e => {
+    if (!e.matches) {
+        const hero = document.querySelector('.hero');
+        if (hero) { hero.style.transform = ''; hero.style.opacity = ''; }
     }
 });
 

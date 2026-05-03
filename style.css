@@ -439,8 +439,12 @@ body {
     padding: 0.5rem 0;
 }
 
-.contact-item:hover {
+a.contact-item:hover {
     color: var(--color-accent-light);
+}
+
+div.contact-item {
+    cursor: default;
 }
 
 .contact-icon {
@@ -613,25 +617,303 @@ body {
     transform: translateX(5px);
 }
 
+/* Embeds */
+.embed-frame {
+    position: relative;
+    width: 100%;
+    margin: 1.5rem 0;
+    background: #000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.embed-canva {
+    aspect-ratio: 1 / 1;
+    max-width: 540px;
+}
+
+.embed-pdf {
+    aspect-ratio: 4 / 5;
+}
+
+.embed-video {
+    aspect-ratio: 9 / 16;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.embed-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.embed-image {
+    width: 100%;
+    max-width: 540px;
+    margin: 1.5rem 0;
+    display: block;
+    border-radius: 4px;
+}
+
+.project-grid-2 {
+    display: grid;
+    grid-template-columns: 540px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.project-grid-2 .embed-frame,
+.project-grid-2 .embed-image {
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .project-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Accordion / details */
+.accordion {
+    background: var(--color-bg-alt);
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--color-accent);
+}
+
+.accordion summary {
+    padding: 1.75rem 2.5rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    transition: background 0.2s;
+}
+
+.accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion summary::after {
+    content: '+';
+    font-size: 1.6rem;
+    color: var(--color-accent);
+    font-weight: 400;
+    line-height: 1;
+    transition: transform 0.3s;
+}
+
+.accordion[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.accordion summary:hover {
+    background: rgba(220, 38, 38, 0.04);
+}
+
+.accordion-meta {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    margin-left: auto;
+    margin-right: 1rem;
+    white-space: nowrap;
+}
+
+.accordion-body {
+    padding: 0 2.5rem 2.5rem;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--color-text);
+}
+
+.accordion-body p {
+    margin-bottom: 1rem;
+}
+
+.accordion-body strong {
+    color: var(--color-primary);
+}
+
+.accordion-body .field {
+    background: white;
+    padding: 0.85rem 1.1rem;
+    border: 1px solid var(--color-border);
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+}
+
+.accordion-body .field-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.accordion-body .cta-pill {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    background: var(--color-primary);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0.5rem 0;
+}
+
+/* Folder pages */
+.folder-page {
+    background: var(--color-bg-alt);
+    padding: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--color-accent);
+}
+
+.folder-page h4 {
+    font-size: 1.35rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.folder-page .folder-page-num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-accent);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+.folder-page .visual-direction {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    font-style: italic;
+    margin-bottom: 1rem;
+    padding: 0.6rem 0.9rem;
+    background: white;
+    border-left: 2px solid var(--color-border);
+}
+
+.folder-page .pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+    margin: 1rem 0;
+}
+
+.folder-page .pillar {
+    background: white;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    font-size: 0.95rem;
+}
+
+.folder-page .pillar strong {
+    display: block;
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+}
+
+.folder-page .product-card {
+    background: white;
+    padding: 1.25rem;
+    margin-bottom: 0.85rem;
+    border: 1px solid var(--color-border);
+}
+
+.folder-page .product-card strong {
+    color: var(--color-primary);
+    font-size: 1.05rem;
+}
+
+@media (max-width: 640px) {
+    .folder-page .pillar-grid {
+        grid-template-columns: 1fr;
+    }
+    .accordion summary {
+        padding: 1.25rem 1.5rem;
+        font-size: 1.05rem;
+        flex-wrap: wrap;
+    }
+    .accordion-meta {
+        margin-left: 0;
+        width: 100%;
+        order: 3;
+    }
+    .accordion-body {
+        padding: 0 1.5rem 1.75rem;
+    }
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
+    .hero {
+        min-height: auto;
+        padding: 7rem 3rem 4rem;
+    }
+
     .hero-container {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
+        text-align: center;
     }
-    
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order: 2;
+    }
+
+    .hero-description {
+        max-width: 600px;
+    }
+
+    .hero-image {
+        order: 1;
+        aspect-ratio: 1;
+        width: 220px;
+        height: 220px;
+        margin: 0 auto;
+        border-radius: 50%;
+        border: 4px solid var(--color-accent);
+        box-shadow: 0 18px 50px rgba(220, 38, 38, 0.22);
+    }
+
+    .hero-image img {
+        filter: grayscale(0%);
+    }
+
+    .hero-image-overlay {
+        display: none;
+    }
+
     .work-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .stats-container {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .contact-container {
         grid-template-columns: 1fr;
         gap: 3rem;
