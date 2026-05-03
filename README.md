@@ -1,4 +1,4 @@
-# Leonardo Barragana — Portfólio v2.0
+# Leonardo Barragana — Portfólio
 
 Portfólio premium para Leonardo Barragana, estrategista de conteúdo e copywriter especializado em campanhas de alta conversão.
 
